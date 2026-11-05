@@ -4,6 +4,8 @@
 
 # Arima-UI Terraria
 
+Автор: **Arima**
+
 **Интерфейс в тёмном стекле: панели, слоты, HUD, меню.**
 
 [![tModLoader](https://img.shields.io/badge/tModLoader-2026.09-6C4CF1?style=flat-square)](https://www.tmodloader.net/)

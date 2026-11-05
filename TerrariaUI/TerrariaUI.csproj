@@ -1,14 +1,18 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk" InitialTargets="CheckTMLPath">
 
-	<!-- tModLoader location: override with -p:TMLPath=... or the TMLPath env var.
-	     The defaults cover a normal Steam install on either drive. -->
+	<!-- tModLoader location. Order: -p:TMLPath, then the TML_PATH environment variable, then
+	     the default Steam install. Nothing author-specific is baked in. -->
 	<PropertyGroup>
-		<TMLPath Condition="'$(TMLPath)' == ''">D:\Program Files (x86)\Steam\steamapps\common\tModLoader</TMLPath>
-		<TMLPath Condition="!Exists('$(TMLPath)\tMLMod.targets') and Exists('C:\Program Files (x86)\Steam\steamapps\common\tModLoader\tMLMod.targets')">C:\Program Files (x86)\Steam\steamapps\common\tModLoader</TMLPath>
+		<TMLPath Condition="'$(TMLPath)' == '' and '$(TML_PATH)' != ''">$(TML_PATH)</TMLPath>
+		<TMLPath Condition="'$(TMLPath)' == '' and Exists('C:\Program Files (x86)\Steam\steamapps\common\tModLoader\tMLMod.targets')">C:\Program Files (x86)\Steam\steamapps\common\tModLoader</TMLPath>
 	</PropertyGroup>
 
-	<!-- Provides target framework, game references and the packaging step. -->
-	<Import Project="$(TMLPath)\tMLMod.targets" />
+	<Import Project="$(TMLPath)\tMLMod.targets" Condition="'$(TMLPath)' != ''" />
+
+	<Target Name="CheckTMLPath">
+		<Error Condition="'$(TMLPath)' == ''"
+		       Text="tModLoader not found. Set the TML_PATH environment variable or pass -p:TMLPath=&quot;&lt;folder containing tMLMod.targets&gt;&quot;." />
+	</Target>
 
 	<PropertyGroup>
 		<AssemblyName>TerrariaUI</AssemblyName>

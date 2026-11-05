@@ -2,10 +2,17 @@
 
 ## Требования
 
-- tModLoader **2026.09** (`D:\Program Files (x86)\Steam\steamapps\common\tModLoader`), таргет `net8.0`
+- tModLoader **2026.09**, таргет `net8.0`
 - .NET SDK (проверено на `10.0.401`) — `dotnet --version`
 
-Путь к tModLoader переопределяется: `dotnet build -p:TMLPath="C:\...\tModLoader"`.
+Путь к tModLoader берётся из переменной окружения `TML_PATH` или свойства `-p:TMLPath`;
+по умолчанию — стандартная установка Steam. Если ничего не найдено, сборка падает
+с понятным сообщением.
+
+```powershell
+$env:TML_PATH = "D:\Steam\steamapps\common\tModLoader"
+dotnet build -c Release
+```
 
 ## Два режима
 
@@ -56,9 +63,8 @@ dotnet build -c Release
 ## Обязательные проверки перед сборкой
 
 ```powershell
-$py = "C:\Users\TANSHI\.dsh\dsh-runtimes\dsh-primary-runtime\dependencies\python\python.exe"
-& $py tools\lint_mod.py          # конфиг-атрибуты и ссылки на ассеты
-& $py tools\lint_mod.py --selftest
+python tools\lint_mod.py           # конфиг-атрибуты и ссылки на ассеты
+python tools\lint_mod.py --selftest
 ```
 
 Линтер ловит именно тот краш, который уже случался: `[Header("...")]` с пробелами валит загрузку
@@ -78,8 +84,8 @@ $py = "C:\Users\TANSHI\.dsh\dsh-runtimes\dsh-primary-runtime\dependencies\python
 3. Сгенерировать пак и проверить:
 
 ```powershell
-& $py tools\gen_menu_pack.py --sizes dump\_menu-sizes.txt --out pack
-& $py tools\build_pack.py --pack pack --manifest menu-manifest.json -o dist
+python tools\gen_menu_pack.py --sizes dump\_menu-sizes.txt --out pack
+python tools\build_pack.py --pack pack --manifest menu-manifest.json -o dist
 ```
 
 Генератор держит холст равным оригиналу (иначе пак не применится), кладёт градиенты только

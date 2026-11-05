@@ -76,7 +76,7 @@ Dark liquid-glass interface for Terraria: panels, slots, HUD, menus and cursors.
 ## Порядок публикации
 
 ```powershell
-cd C:\Users\TANSHI\Documents\GitHub\Arima-UI-Terraria
+cd <папка репозитория>
 git add .
 git commit -m "Arima-UI Terraria 1.0"
 git push

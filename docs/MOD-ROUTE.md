@@ -90,7 +90,7 @@ TerrariaUI/
 ```
 
 Сборка — как в `projects/Mod-terr/HeartSlots`: `<Import Project="…/tModLoader/tMLMod.targets" />`,
-локальный tModLoader обнаружен по пути `D:\Program Files (x86)\Steam\steamapps\common\tModLoader`.
+путь к tModLoader задаётся свойством `TMLPath` при сборке.
 
 ## 6. Что нужно проверить спайком (до большой работы)
 

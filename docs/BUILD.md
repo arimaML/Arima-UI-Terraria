@@ -45,7 +45,7 @@ dotnet build -c Release
 ## Как загрузить мод в игре
 
 1. Собрать (режим 2) или скопировать `TerrariaUI.tmod` в `...\tModLoader\Mods`.
-2. Запустить tModLoader → Workshop → Mods → включить **Terraria UI** → Reload.
+2. Запустить tModLoader → Workshop → Mods → включить **Arima-UI Terraria** → Reload.
 3. Загрузить любой мир: мод один раз за сессию выгружает ванильные UI-текстуры
    в `...\tModLoader\TerrariaUI-dump\` (`*.png` + `_sizes.txt`).
 

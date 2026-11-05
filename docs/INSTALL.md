@@ -11,16 +11,20 @@
 
 1. Скопировать `TerrariaUI.tmod` в папку `Mods`.
 2. Скопировать `Arima-UI Terraria.zip` в `ResourcePacks` (не распаковывая).
-3. Запустить tModLoader → Workshop → Mods → включить **Terraria UI** → Reload.
+3. Запустить tModLoader → Workshop → Mods → включить **Arima-UI Terraria** → Reload.
 4. Главное меню → Workshop → Resource Packs → перенести пак вправо (Enabled).
 5. Зайти в мир.
+
+При скачивании с GitHub архив приходит как `Arima-UI.Terraria.zip`: площадка заменяет
+пробел в имени на точку. Это тот же файл — имя пака игра берёт из `pack.json`, а не из
+имени архива, так что в списке ресурспаков он всё равно называется «Arima-UI Terraria».
 
 Ресурспак читается при загрузке игры, поэтому после его замены нужен перезапуск.
 Мод перечитывается по Reload.
 
 ## Настройка
 
-`Settings → Mod Config → Terraria UI`. Всё на русском и английском.
+`Settings → Mod Config → Arima-UI Terraria`. Всё на русском и английском.
 
 Полезное:
 

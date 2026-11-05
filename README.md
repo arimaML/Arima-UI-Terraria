@@ -4,14 +4,14 @@
 
 # Arima-UI Terraria
 
-Автор: **Arima**
+**Тёмное стекло вместо стандартного интерфейса Terraria.**
 
-**Интерфейс в тёмном стекле: панели, слоты, HUD, меню.**
+Автор: **Arima**
 
 [![tModLoader](https://img.shields.io/badge/tModLoader-2026.09-6C4CF1?style=flat-square)](https://www.tmodloader.net/)
 [![Terraria](https://img.shields.io/badge/Terraria-1.4.4.9-2F855A?style=flat-square)](https://terraria.org/)
-[![Languages](https://img.shields.io/badge/lang-RU%20%7C%20EN-D64545?style=flat-square)](#-english)
-[![Version](https://img.shields.io/badge/version-1.0-1F6FEB?style=flat-square)](#)
+[![Version](https://img.shields.io/badge/version-1.0-1F6FEB?style=flat-square)](#установка)
+[![License](https://img.shields.io/badge/license-MIT-8B93A3?style=flat-square)](LICENSE)
 
 </div>
 
@@ -20,37 +20,52 @@
 ## Что это
 
 Полная замена внешнего вида интерфейса Terraria в стиле «liquid glass»: тёмное стекло,
-мягкие скругления, объёмные pill-кнопки, приглушённый фон под открытыми панелями.
+мягкие скругления, объёмные pill-кнопки, кромка в 1 px и приглушённый мир под открытыми
+панелями. Мелкий текст остаётся резким — прозрачность только у подложки.
 
-Два артефакта, работают вместе:
+Проект состоит из двух частей, они работают вместе:
 
-| | Что делает |
+| Артефакт | Что внутри |
 |---|---|
-| **мод** (`release/TerrariaUI.tmod`) | стеклянная панель под инвентарём, затемнение фона, анимации появления, опциональная полоса HUD, дизайн-лаборатория |
-| **ресурспак** (`release/Arima-UI Terraria.zip`) | все текстуры: меню и настройки, создание мира/персонажа, тултипы, чат, слоты, сердца и мана, курсоры, полосы HUD |
+| `release/TerrariaUI.tmod` | мод: стеклянная панель под инвентарём, затемнение фона, анимации появления, полоса HUD, дизайн-лаборатория |
+| `release/Arima-UI Terraria.zip` | ресурспак: все текстуры — меню и настройки, тултипы, чат, слоты инвентаря, сердца, мана, курсоры, полосы HUD |
 
-Мод не трогает `TextureAssets` — это принципиально: подмена ассетов ломается при Reload,
-потому что tModLoader освобождает ассеты мода, а ваниль продолжает на них ссылаться.
-Все замены текстур живут в ресурспаке, которым владеет игра.
+Мод ничего не пишет в `TextureAssets`. Это принципиальное решение: при перезагрузке моды
+tModLoader освобождает ассеты мода, а ваниль продолжает на них ссылаться — игра падает
+с `NullReferenceException` в отрисовке. Поэтому все замены текстур лежат в ресурспаке,
+которым владеет сама игра.
+
+## Что меняется
+
+- **Инвентарь** — стеклянная панель, слоты 44 px с кромкой и бликом, скрим под интерфейсом.
+- **Меню и настройки** — тёмные пластины вместо деревянных, новые кнопки, переключатели,
+  ползунки, скроллбары и вкладки.
+- **HUD** — перерисованы сердца, мана и полосы; опционально стеклянная полоса вместо них.
+- **Тултипы и чат** — стеклянные подложки вместо бумажных.
+- **Курсоры** — 18 вариантов, кольцо захвата цели и радиальное меню.
 
 ## Как это выглядит
 
-<img src="docs/img/screens/inventory.jpg" alt="инвентарь в стекле">
+<img src="docs/img/screens/inventory.jpg" alt="инвентарь в тёмном стекле">
 
 <table>
 <tr>
 <td><img src="docs/img/screens/config.jpg" alt="настройки мода"></td>
-<td><img src="docs/img/menu-pack.png" alt="пластины ресурспака"></td>
+<td><img src="docs/img/menu-pack.png" alt="пластины меню из ресурспака"></td>
 </tr>
 </table>
 
 <details>
-<summary>Дизайн-борды (как проектировалось)</summary>
+<summary>Ещё: дизайн-борды и отдельные элементы</summary>
 
 <table>
 <tr>
 <td><img src="docs/img/mockup-inventory.png" alt="инвентарь и компоненты"></td>
 <td><img src="docs/img/mockup-menu.png" alt="меню"></td>
+</tr>
+<tr>
+<td><img src="docs/img/cursors.png" alt="курсоры"></td>
+<td><img src="docs/img/sprites-pack.png" alt="спрайты HUD"></td>
 </tr>
 </table>
 
@@ -58,53 +73,85 @@
 
 ## Установка
 
-1. `TerrariaUI.tmod` → `Documents\My Games\Terraria\tModLoader\Mods`
-2. `Arima-UI Terraria.zip` → `Documents\My Games\Terraria\ResourcePacks`
-3. Запустить tModLoader → включить мод **Arima-UI Terraria** → Reload
-4. Главное меню → Workshop → Resource Packs → перенести пак вправо
-5. Перезапустить игру (пак читается при загрузке)
+1. `release/TerrariaUI.tmod` → `Documents\My Games\Terraria\tModLoader\Mods`
+2. `release/Arima-UI Terraria.zip` → `Documents\My Games\Terraria\ResourcePacks`
+3. Запустить tModLoader и включить мод **Arima-UI Terraria**, затем Reload
+4. В главном меню: `Workshop → Resource Packs`, перенести пак в правую колонку
+5. Перезапустить игру — пак читается только при загрузке
 
-Подробнее — [docs/INSTALL.md](docs/INSTALL.md).
+Порядок важен: сначала мод, потом пак. Если пак отключён, панели и HUD останутся
+стеклянными, а текстуры меню и слотов — ванильными.
+
+Подробности и таблица «симптом → причина» — в [docs/INSTALL.md](docs/INSTALL.md).
 
 ## Настройка
 
-`Settings → Mod Config → Arima-UI Terraria`. Всё на русском и английском.
+`Settings → Mod Config → Arima-UI Terraria`. Подписи на русском и английском.
 
-| Параметр | Зачем |
+**Стекло**
+
+| Параметр | Что делает |
 |---|---|
-| `Плотность панели` | насколько плотное стекло |
-| `Цвет стекла`, `Акцентный цвет`, `Цвет текста` | палитра в рантайме, с пикером |
+| `Плотность панели` | насколько плотное стекло, 0.05–1 |
+| `Цвет стекла` | базовый цвет панелей, с пикером |
+| `Цвет слотов`, `Прозрачность слотов` | подложки слотов |
+| `Акцентный цвет` | главные кнопки, ползунки, кольцо выбора |
+| `Цвет текста`, `Приглушённый текст` | заголовки и вторичные подписи |
 | `Яркость кромки`, `Сила блика` | «дороговизна» материала |
-| `Затемнение фона` | скрим под интерфейсом; 0 — выключить |
-| `Стеклянная полоса HUD`, `Край HUD`, `отступы X/Y`, `Ширина полосы` | свой бар вместо сердец |
-| `Панель — X/Y`, `Ширина/Высота панели` | подгонка под раскладку других модов |
+| `Реальное размытие`, `Сила размытия` | размытие мира за панелями |
+| `Затемнение фона` | скрим под открытым интерфейсом, 0 — выключить |
+
+**HUD**
+
+| Параметр | Что делает |
+|---|---|
+| `Стеклянная полоса HUD` | свой бар здоровья и маны вместо сердец |
+| `Край HUD` | правый край, как в ванили, или левый |
+| `HUD — отступ X`, `HUD — отступ Y` | положение полосы |
+| `Ширина полосы HUD` | длина полосы |
+
+**Раскладка инвентаря**
+
+| Параметр | Что делает |
+|---|---|
+| `Панель — X`, `Панель — Y` | положение подложки под инвентарём |
+| `Ширина панели`, `Высота панели` | размеры подложки |
+
+Раскладку приходится подгонять вручную: геометрия ванильного инвентаря зависит от
+`Main.UIScale` и разрешения. Как калибровать — [docs/LAYOUT.md](docs/LAYOUT.md).
+
+**Отладка**
+
+| Параметр | Что делает |
+|---|---|
+| `Отладочный оверлей` | разрешение, масштаб UI и линейка |
+| `Дизайн-лаборатория` | все компоненты системы на одном экране |
+| `Дамп ванильных ассетов` | сохраняет ванильные UI-текстуры в папку сохранений |
 
 ## Структура репозитория
 
 ```
-TerrariaUI/     исходники мода (C#, ассеты, локализация)
-docs/           дизайн-система, метрики ассетов, установка, журнал изменений
-release/        собранные артефакты: .tmod и ресурспак
+TerrariaUI/   исходники мода: C#, ассеты, локализация, конфиг
+docs/         дизайн-система, метрики текстур, установка, сборка
+release/      собранные артефакты: .tmod и ресурспак
 ```
-
-<table>
-<tr>
-<td><img src="docs/img/menu-pack.png" alt="пластины пака" width="380"></td>
-<td><img src="docs/img/cursors.png" alt="курсоры" width="380"></td>
-</tr>
-</table>
 
 ## Сборка
 
-Нужен tModLoader 2026.09 и .NET SDK.
+Нужны tModLoader 2026.09 и .NET SDK 8.0 или новее.
 
 ```powershell
+$env:TML_PATH = "C:\Program Files (x86)\Steam\steamapps\common\tModLoader"
 cd TerrariaUI
-dotnet build -c Release                 # компиляция + упаковка .tmod в Mods
+
+dotnet build -c Release                     # компиляция и упаковка .tmod в Mods
 dotnet build -c Release -p:BuildMod=false   # только проверка компиляции
 ```
 
-Путь к установке переопределяется: `-p:TMLPath="C:\...\tModLoader"`.
+`TML_PATH` нужен, только если игра стоит не в стандартной папке Steam.
+Упаковка не работает, пока tModLoader запущен — закройте игру или собирайте
+через `Develop Mods → Build + Reload`. Линт и проверка ассетов —
+[docs/BUILD.md](docs/BUILD.md).
 
 ## Документация
 
@@ -113,27 +160,11 @@ dotnet build -c Release -p:BuildMod=false   # только проверка ко
 | [docs/DESIGN.md](docs/DESIGN.md) | дизайн-система: токены, компоненты, premultiplied-альфа, антипаттерны |
 | [docs/UI-INVENTORY.md](docs/UI-INVENTORY.md) | реальные размеры ванильных UI-текстур |
 | [docs/LAYOUT.md](docs/LAYOUT.md) | как попадаем в координаты UI и как калибровать |
+| [docs/INSTALL.md](docs/INSTALL.md) | установка, порядок включения, разбор симптомов |
+| [docs/BUILD.md](docs/BUILD.md) | сборка, упаковка, линт |
 | [docs/CHANGELOG.md](docs/CHANGELOG.md) | журнал изменений и известные ограничения |
-
----
-
-## English
-
-A dark "liquid glass" reskin of the Terraria interface: translucent rounded panels with a 1 px
-rim, moulded pill buttons, a dimmed backdrop behind open screens, a glass HUD, glass slots and a
-recoloured cursor set.
-
-Two artefacts: the **mod** (`release/TerrariaUI.tmod`) draws the panels, backdrop and HUD bar;
-the **resource pack** (`release/Arima-UI Terraria.zip`) replaces every texture — menus, world and
-character creation, tooltips, chat, slots, hearts, mana, cursors and HUD bars.
-
-The mod never writes into `TextureAssets`: mod assets are disposed on reload while vanilla keeps
-pointing at them, which crashes the game. All texture replacements live in the pack.
-
-Install: put the `.tmod` into `tModLoader/Mods`, the `.zip` into `Terraria/ResourcePacks`, enable
-both, restart the game. Details in [docs/INSTALL.md](docs/INSTALL.md).
 
 ## Лицензия
 
-MIT — см. [LICENSE](LICENSE). Terraria и её ассеты принадлежат Re-Logic; репозиторий не содержит
-ванильных ресурсов, только собственные перерисовки.
+MIT — см. [LICENSE](LICENSE). Код и текстуры мода написаны с нуля; Terraria и её
+оригинальные ассеты принадлежат Re-Logic. Репозиторий не содержит ванильных ресурсов.

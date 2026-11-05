@@ -6,11 +6,9 @@
 
 **Тёмное стекло вместо стандартного интерфейса Terraria.**
 
-Автор: **Arima**
-
 [![tModLoader](https://img.shields.io/badge/tModLoader-2026.09-6C4CF1?style=flat-square)](https://www.tmodloader.net/)
 [![Terraria](https://img.shields.io/badge/Terraria-1.4.4.9-2F855A?style=flat-square)](https://terraria.org/)
-[![Version](https://img.shields.io/badge/version-1.0-1F6FEB?style=flat-square)](#установка)
+[![Version](https://img.shields.io/badge/version-1.1-1F6FEB?style=flat-square)](#установка)
 [![License](https://img.shields.io/badge/license-MIT-8B93A3?style=flat-square)](LICENSE)
 
 </div>

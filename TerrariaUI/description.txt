@@ -7,7 +7,7 @@ panels with a 1 px light rim, moulded pill buttons, recessed slots, a dimmed bac
 behind open interfaces, a glass HUD, a recoloured cursor set, and an optional style-guide
 screen for inspecting every component.
 
-Pairs with the "Terraria UI" resource pack, which skins the menus, settings and mod
+Pairs with the "Arima-UI Terraria" resource pack, which skins the menus, settings and mod
 config screens (tModLoader cannot repaint those from code).
 
 Cosmetic only: no gameplay changes, no saves touched. Client side.

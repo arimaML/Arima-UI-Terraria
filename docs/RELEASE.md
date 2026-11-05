@@ -19,6 +19,57 @@ Dark liquid-glass interface for Terraria: panels, slots, HUD, menus and cursors.
 **Topics:** `terraria` `tmodloader` `resource-pack` `ui` `theme` `glassmorphism` `liquid-glass` `csharp`
 `tmodloader-mod` `terraria-mod`
 
+## Релиз 1.1
+
+**Tag:** `v1.1`
+**Название:** `Arima-UI Terraria 1.1`
+
+**Описание (можно вставлять целиком):**
+
+```markdown
+Правки локализации и описаний. Отрисовка не менялась — если вы уже на 1.0, обновляться
+не обязательно.
+
+## Что исправлено
+
+- **Конфиг больше не описан дважды.** В `ru-RU.hjson` и `en-US.hjson` блок `Configs:` лежал
+  и внутри `Mods.TerrariaUI`, и ещё раз в корне файла. Дубль удалён: tModLoader читает
+  только вложенный путь, корневой был мёртвым грузом.
+- **Заголовок раздела HUD переведён.** В локализацию добавлен ключ `Headers.Hud` — вместо
+  сырого `Hud` в конфиге показывается нормальное название раздела.
+- **Убраны устаревшие заготовки** `ru-RU_Mods.TerrariaUI.hjson` и
+  `en-US_Mods.TerrariaUI.hjson` от старой версии конфига (в них остался несуществующий
+  `EnableHud`).
+- **`description.txt`**: имя ресурспака исправлено на `Arima-UI Terraria`.
+- **README**: один язык (русский), пути и имена файлов — латиницей.
+
+## Установка
+
+1. `TerrariaUI.tmod` → `Documents\My Games\Terraria\tModLoader\Mods` (заменить старый)
+2. `Arima-UI Terraria.zip` → `Documents\My Games\Terraria\ResourcePacks` (заменить старый)
+3. Включить мод в tModLoader → Reload
+4. Workshop → Resource Packs → включить пак
+5. Перезапустить игру
+
+## Требования
+
+- Terraria 1.4.4.9 (desktop)
+- tModLoader 2026.09
+
+## Известные ограничения
+
+- Ползунки в ванильных настройках рисуются кодом, а не текстурой — пак их не перекрашивает.
+- Свой шрифт невозможен без подмены атласа глифов `FontAssets`.
+- Мод клиентский: в мультиплеере ничего не ломает, но и другие игроки увидят ванильный вид.
+```
+
+**Файлы релиза (загрузить вручную):**
+
+| Файл | Откуда | Размер |
+|---|---|---|
+| `TerrariaUI.tmod` | `release/TerrariaUI.tmod` | 84 633 б |
+| `Arima-UI Terraria.zip` | `release/Arima-UI Terraria.zip` | 84 307 б |
+
 ## Релиз 1.0
 
 **Tag:** `v1.0`
@@ -78,9 +129,9 @@ Dark liquid-glass interface for Terraria: panels, slots, HUD, menus and cursors.
 ```powershell
 cd <папка репозитория>
 git add .
-git commit -m "Arima-UI Terraria 1.0"
+git commit -m "Arima-UI Terraria 1.1"
 git push
 ```
 
-Затем на github.com: **Releases → Draft a new release** → tag `v1.0`, заголовок и текст выше,
-приложить два файла из `release/`.
+Затем на github.com: **Releases → Draft a new release** → выбрать тег `v1.1` (или создать
+его от `main`), заголовок и текст из блока выше, приложить два файла из `release/`.

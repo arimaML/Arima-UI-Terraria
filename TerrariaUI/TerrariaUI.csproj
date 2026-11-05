@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<!-- tModLoader location: override with -p:TMLPath=... or the TMLPath env var.
+	     The defaults cover a normal Steam install on either drive. -->
+	<PropertyGroup>
+		<TMLPath Condition="'$(TMLPath)' == ''">D:\Program Files (x86)\Steam\steamapps\common\tModLoader</TMLPath>
+		<TMLPath Condition="!Exists('$(TMLPath)\tMLMod.targets') and Exists('C:\Program Files (x86)\Steam\steamapps\common\tModLoader\tMLMod.targets')">C:\Program Files (x86)\Steam\steamapps\common\tModLoader</TMLPath>
+	</PropertyGroup>
+
+	<!-- Provides target framework, game references and the packaging step. -->
+	<Import Project="$(TMLPath)\tMLMod.targets" />
+
+	<PropertyGroup>
+		<AssemblyName>TerrariaUI</AssemblyName>
+		<RootNamespace>TerrariaUI</RootNamespace>
+		<Nullable>disable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<!-- Filled in by tMLMod.targets only when it may package the mod; needed for
+		     a compile-only pass (-p:BuildMod=false). -->
+		<TargetFramework Condition="'$(TargetFramework)' == ''">net8.0</TargetFramework>
+		<LangVersion Condition="'$(LangVersion)' == ''">12.0</LangVersion>
+	</PropertyGroup>
+
+	<!-- Compile-only mode: the targets attach game references only when they are also
+	     allowed to package the .tmod, so mirror them here. -->
+	<ItemGroup Condition="'$(BuildMod)' != 'true'">
+		<Reference Include="$(tMLSteamPath)$(tMLPath)" Private="false" />
+		<Reference Include="$(tMLLibraryPath)/**/*.dll" Private="false" />
+		<Reference Remove="$(tMLLibraryPath)/Native/**" />
+		<Reference Remove="$(tMLLibraryPath)/**/runtime*/**" />
+		<Reference Remove="$(tMLLibraryPath)/**/*.resources.dll" />
+		<Reference Remove="$(tMLLibraryPath)/tModCodeAssist/**" />
+	</ItemGroup>
+
+</Project>

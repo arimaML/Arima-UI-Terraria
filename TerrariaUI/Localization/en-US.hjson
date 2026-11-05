@@ -1,0 +1,318 @@
+Mods: {
+	TerrariaUI: {
+		Lab: {
+			Title: LIQUID GLASS
+			Subtitle: components
+			Buttons: buttons
+			Tabs: tabs
+			Slots: slots
+			Controls: controls
+			Text: text
+			Create: Create
+			Cancel: Cancel
+			Locked: Locked
+			Items: Items
+			Crafting: Crafting
+			Loadout: Loadout
+			Off: off
+			On: on
+			Search: Search items...
+			ItemName: Terra Blade
+			ItemStat: 95 melee damage
+			Radius: radius 22  ·  rim 1 px
+			Accent: accent + white sheen
+			Hint: config > Design lab
+			Idle: idle
+			Hover: hover
+			Selected: selected
+			Value: "0.58"
+		}
+
+		Demo: {
+			Inventory: INVENTORY
+			Counter: 24 / 40
+			Sort: Sort
+			QuickStack: Quick Stack
+			Stash: Stash
+			Caption: material test - real slot size 44 px
+			TooltipTitle: Liquid Glass
+			TooltipLine1: 95 melee damage
+			TooltipLine2: Very fast speed  ·  Strong knockback
+		}
+	Configs: {
+		UiConfig: {
+			DisplayName: Arima-UI Terraria
+
+			Headers: {
+				Modules: Modules
+				Glass: Glass
+				Layout: Inventory layout
+				Debug: Debug
+			}
+
+			EnableInventory: {
+				Label: Inventory panel
+				Tooltip: Draw the glass sheet behind the inventory
+			}
+
+			RealBlur: {
+				Label: Real blur
+				Tooltip: Blur the world behind panels (costs a shader pass)
+			}
+
+			BlurStrength: {
+				Label: Blur strength
+				Tooltip: How strong the blur behind glass is
+			}
+
+			PanelOpacity: {
+				Label: Panel opacity
+				Tooltip: Glass density; higher hides more of the world
+			}
+
+			SlotTint: {
+				Label: Slot tint
+				Tooltip: Colour multiplied into every slot
+			}
+
+			SlotOpacity: {
+				Label: Slot opacity
+				Tooltip: How visible slot plates are
+			}
+
+			PanelTint: {
+				Label: Panel tint
+				Tooltip: Base colour of the glass
+			}
+
+			AccentColor: {
+				Label: Accent colour
+				Tooltip: Primary buttons, sliders, selection rings
+			}
+
+			TextColor: {
+				Label: Text colour
+				Tooltip: Titles and values
+			}
+
+			TextDimColor: {
+				Label: Dim text colour
+				Tooltip: Hints, counters, secondary labels
+			}
+
+			RimStrength: {
+				Label: Rim strength
+				Tooltip: Brightness of the 1 px light edge
+			}
+
+			SheenStrength: {
+				Label: Sheen strength
+				Tooltip: Brightness of the top highlight
+			}
+
+			ScrimStrength: {
+				Label: Background dim
+				Tooltip: Darkens the world behind open interfaces; 0 turns it off
+			}
+
+			ReplaceVanillaHud: {
+				Label: Glass HUD bar
+				Tooltip: Draw a glass life and mana bar instead of vanilla hearts
+			}
+
+			HudAnchorRight: {
+				Label: HUD anchor
+				Tooltip: Right edge (vanilla position) or left edge
+			}
+
+			HudX: {
+				Label: HUD offset X
+				Tooltip: Distance from the anchored edge, in UI units
+			}
+
+			HudW: {
+				Label: HUD width
+				Tooltip: Width of the glass bar, in UI units
+			}
+
+			HudY: {
+				Label: HUD offset Y
+				Tooltip: Distance from the top of the screen, in UI units
+			}
+
+			PanelX: {
+				Label: Panel X
+				Tooltip: Left edge of the inventory sheet, in UI units
+			}
+
+			PanelY: {
+				Label: Panel Y
+				Tooltip: Top edge of the inventory sheet, in UI units
+			}
+
+			PanelW: {
+				Label: Panel width
+				Tooltip: Width of the inventory sheet, in UI units
+			}
+
+			PanelH: {
+				Label: Panel height
+				Tooltip: Height of the inventory sheet, in UI units
+			}
+
+			DebugInfo: {
+				Label: Debug overlay
+				Tooltip: Resolution, UI scale and an on-screen ruler for calibration
+			}
+
+			ShowDesignLab: {
+				Label: Design lab
+				Tooltip: Show every component of the design system on one screen
+			}
+
+			DumpVanillaAssets: {
+				Label: Dump vanilla assets
+				Tooltip: Write vanilla UI textures and their sizes to the save folder
+			}
+		}
+	}
+	}
+}
+
+Configs: {
+	UiConfig: {
+		DisplayName: Arima-UI Terraria
+
+		Headers: {
+			Modules: Modules
+			Glass: Glass
+			Layout: Inventory layout
+			Debug: Debug
+		}
+
+		EnableInventory: {
+			Label: Inventory panel
+			Tooltip: Draw the glass sheet behind the inventory
+		}
+
+		RealBlur: {
+			Label: Real blur
+			Tooltip: Blur the world behind panels (costs a shader pass)
+		}
+
+		BlurStrength: {
+			Label: Blur strength
+			Tooltip: How strong the blur behind glass is
+		}
+
+		PanelOpacity: {
+			Label: Panel opacity
+			Tooltip: Glass density; higher hides more of the world
+		}
+
+		SlotTint: {
+			Label: Slot tint
+			Tooltip: Colour multiplied into every slot
+		}
+
+		SlotOpacity: {
+			Label: Slot opacity
+			Tooltip: How visible slot plates are
+		}
+
+		PanelTint: {
+			Label: Panel tint
+			Tooltip: Base colour of the glass
+		}
+
+		AccentColor: {
+			Label: Accent colour
+			Tooltip: Primary buttons, sliders, selection rings
+		}
+
+		TextColor: {
+			Label: Text colour
+			Tooltip: Titles and values
+		}
+
+		TextDimColor: {
+			Label: Dim text colour
+			Tooltip: Hints, counters, secondary labels
+		}
+
+		RimStrength: {
+			Label: Rim strength
+			Tooltip: Brightness of the 1 px light edge
+		}
+
+		SheenStrength: {
+			Label: Sheen strength
+			Tooltip: Brightness of the top highlight
+		}
+
+		ScrimStrength: {
+			Label: Background dim
+			Tooltip: Darkens the world behind open interfaces; 0 turns it off
+		}
+
+		ReplaceVanillaHud: {
+			Label: Glass HUD bar
+			Tooltip: Draw a glass life and mana bar instead of vanilla hearts
+		}
+
+		HudAnchorRight: {
+			Label: HUD anchor
+			Tooltip: Right edge (vanilla position) or left edge
+		}
+
+		HudX: {
+			Label: HUD offset X
+			Tooltip: Distance from the anchored edge, in UI units
+		}
+
+		HudW: {
+			Label: HUD width
+			Tooltip: Width of the glass bar, in UI units
+		}
+
+		HudY: {
+			Label: HUD offset Y
+			Tooltip: Distance from the top of the screen, in UI units
+		}
+
+		PanelX: {
+			Label: Panel X
+			Tooltip: Left edge of the inventory sheet, in UI units
+		}
+
+		PanelY: {
+			Label: Panel Y
+			Tooltip: Top edge of the inventory sheet, in UI units
+		}
+
+		PanelW: {
+			Label: Panel width
+			Tooltip: Width of the inventory sheet, in UI units
+		}
+
+		PanelH: {
+			Label: Panel height
+			Tooltip: Height of the inventory sheet, in UI units
+		}
+
+		DebugInfo: {
+			Label: Debug overlay
+			Tooltip: Resolution, UI scale and an on-screen ruler for calibration
+		}
+
+		ShowDesignLab: {
+			Label: Design lab
+			Tooltip: Show every component of the design system on one screen
+		}
+
+		DumpVanillaAssets: {
+			Label: Dump vanilla assets
+			Tooltip: Write vanilla UI textures and their sizes to the save folder
+		}
+	}
+}

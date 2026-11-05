@@ -1,0 +1,8 @@
+displayName = Arima-UI Terraria
+author = Arima
+version = 1.0
+side = Client
+homepage =
+description = Liquid Glass interface: glass panels, slots, scrim, HUD, cursor and a menu skin resource pack.
+buildIgnore = .*\.csproj, bin/.*, obj/.*, \.vs/.*, docs/.*
+includePDB = false
